@@ -1,6 +1,9 @@
-# Getting Started with Create React App
+![Logo](https://raw.githubusercontent.com/alwus/iepmafia/refs/heads/main/public/logo192.png) 
+# IEP Mafia Athletics [Website](https://iepmafia.com)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Build status:
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a9804570-edd0-4cf8-924a-dfcd91567ee4/deploy-status)](https://app.netlify.com/sites/iepmafia/deploys)
 
 ## Available Scripts
 
