@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: alwus/iepmafia
+  repo: alwus/iepmafia-content
 
 media_folder: "public/uploads"      # Where images are stored
 public_folder: "/uploads"           # Public path for images
