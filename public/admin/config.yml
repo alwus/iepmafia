@@ -11,7 +11,7 @@ collections:
     folder: "content/games"
     create: true
     fields:
-      - { name: "date", label: "Date", widget: "datetime" }
+      - { name: "date", label: "Date", widget: "string" }
       - { name: "time", label: "Time", widget: "string" }
       - { name: "sport", label: "Sport", widget: "string", default: "Soccer" }
       - { name: "team1", label: "Team 1", widget: "string" }
