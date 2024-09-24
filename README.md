@@ -1,4 +1,6 @@
+![Logo](https://raw.githubusercontent.com/alwus/iepmafia/refs/heads/main/public/logo192.png) 
 # IEP Mafia Athletics Website
+
 
 Build status:
 
