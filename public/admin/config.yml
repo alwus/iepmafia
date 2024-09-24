@@ -1,6 +1,6 @@
 backend:
-  name: git-gateway  # Keep the same backend name used for production
-  branch: main       # Or the branch you're using
+  name: github
+  repo: alwus/iepmafia
 
 media_folder: "public/uploads"      # Where images are stored
 public_folder: "/uploads"           # Public path for images
