@@ -16,6 +16,6 @@ collections:
       - { name: "sport", label: "Sport", widget: "string", default: "Soccer" }
       - { name: "team1", label: "Team 1", widget: "string" }
       - { name: "team2", label: "Team 2", widget: "string" }
-      - { name: "score1", label: "Score 1", widget: "number", optional: true}
-      - { name: "score2", label: "Score 2", widget: "number", optional: true}
+      - { name: "score1", label: "Score 1", widget: "number", required: false}
+      - { name: "score2", label: "Score 2", widget: "number", required: false}
       - { name: "final", label: "Final", widget: "boolean", default: false}
