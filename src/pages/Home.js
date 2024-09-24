@@ -42,7 +42,7 @@ const Home = () => {
             ...game,
             date: new Date(`${game.date}, 2024`)  // Assuming all games are in the same year
           }))
-          .filter(game => game.final == 'false')
+          .filter(game => game.final === 'false')
           .sort((a, b) => a.date - b.date); // Sort games by date
           console.log(parsedGames)
           const nextGame = parsedGames.length > 0 ? parsedGames[0] : null;
