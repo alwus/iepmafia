@@ -1,0 +1,23 @@
+@font-face {
+    font-family: VarsityTeamBold;
+    src: url("../public/VarsityTeam-Bold.otf") format("opentype");
+}
+
+/* Apply the custom font to the body */
+h1, h2, h3 {
+    font-family: 'VarsityTeamBold', sans-serif;
+}
+
+/* Optional: Apply font to all Bootstrap components */
+.btn, .navbar, .form-control {
+    font-family: 'VarsityTeamBold', sans-serif;
+}
+
+:root {
+    --bs-dark: #1a212f; /* Replace with your custom dark color */
+}
+
+.bg-dark {
+    background-color: var(--bs-dark) !important;
+  }
+  
