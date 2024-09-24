@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway  # Keep the same backend name used for production
+  branch: main       # Or the branch you're using
+  local_backend: true  # This enables the local backend mode
+
+media_folder: "public/uploads"      # Where images are stored
+public_folder: "/uploads"           # Public path for images
+
+collections:
+  - name: "games"
+    label: "Soccer Games"
+    folder: "content/games"
+    create: true
+    fields:
+      - { name: "date", label: "Date", widget: "datetime" }
+      - { name: "time", label: "Time", widget: "string" }
+      - { name: "sport", label: "Sport", widget: "string", default: "Soccer" }
+      - { name: "team1", label: "Team 1", widget: "string" }
+      - { name: "team2", label: "Team 2", widget: "string" }
+      - { name: "score1", label: "Score 1", widget: "number" }
+      - { name: "score2", label: "Score 2", widget: "number" }
