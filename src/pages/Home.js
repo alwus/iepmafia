@@ -1,8 +1,15 @@
 import { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import Game from '../components/Game';
+import ReactGA from 'react-ga4';
 
 const parseFrontMatter = (text) => {
+    ReactGA.send({
+        hitType: "pageview",
+        page: "/",
+        title: "Home"
+    })
+
     const result = {};
     const lines = text.split('\n');
   

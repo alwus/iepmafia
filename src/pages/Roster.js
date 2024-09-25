@@ -1,7 +1,14 @@
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
+import ReactGA from 'react-ga4';
 
 const parseFrontMatter = (text) => {
+    ReactGA.send({
+        hitType: "pageview",
+        page: "/roster",
+        title: "Roster"
+    })
+
   const result = {};
   const lines = text.split('\n');
 
