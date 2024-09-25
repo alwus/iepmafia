@@ -66,8 +66,7 @@ const Roster = () => {
         setPlayers(fetchedPlayers);
       });
 
-    console.log(players)
-  }, []);
+    }, []);
 
   return (
     <Container className="mt-5">
