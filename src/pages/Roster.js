@@ -1,4 +1,4 @@
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col, Image } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 
 const parseFrontMatter = (text) => {
@@ -27,14 +27,13 @@ const Roster = () => {
     const fetchSports = fetch('https://api.github.com/repos/alwus/iepmafia-content/contents/content/sport')
       .then((response) => response.json())
       .then(async (files) => {
-        // For each file, fetch the raw markdown content and parse it
         const sportsPromises = files.map(async (file) => {
-          const res = await fetch(file.download_url);  // Download the raw markdown file
+          const res = await fetch(file.download_url);
           const text = await res.text();
-          const frontMatter = parseFrontMatter(text);  // Manually parse front matter
+          const frontMatter = parseFrontMatter(text);
           return frontMatter;
         });
-        
+
         return Promise.all(sportsPromises);
       })
       .catch((error) => {
@@ -46,11 +45,10 @@ const Roster = () => {
     const fetchPlayers = fetch('https://api.github.com/repos/alwus/iepmafia-content/contents/content/players')
       .then((response) => response.json())
       .then(async (files) => {
-        // For each file, fetch the raw markdown content and parse it
         const playersPromises = files.map(async (file) => {
-          const res = await fetch(file.download_url);  // Download the raw markdown file
+          const res = await fetch(file.download_url);
           const text = await res.text();
-          const frontMatter = parseFrontMatter(text);  // Manually parse front matter
+          const frontMatter = parseFrontMatter(text);
           return frontMatter;
         });
 
@@ -67,24 +65,36 @@ const Roster = () => {
         setSports(fetchedSports);
         setPlayers(fetchedPlayers);
       });
+
+    console.log(players)
   }, []);
 
   return (
     <Container className="mt-5">
       <h1>Roster</h1>
-      <p>Current rosters for our athletic teams</p>
+      <p>Current rosters of our athletic teams</p>
       {sports.length > 0 ? (
         sports.map((sport, index) => (
-          <div key={index}>
+          <div key={index} className='mt-4'>
             <h2>{sport.name}</h2>
-            <ul>
+            <Row>
               {players
                 .filter((player) => player.sport === sport.name)
                 .map((player, playerIndex) => (
-                  <li key={playerIndex}>{player.firstname} {player.lastname}</li> // Display player's name or any other info
+                  <Col key={playerIndex} xs={6} md={4} lg={2} className="d-flex flex-column align-items-center mt-4">
+                    <Image
+                      src={`https://raw.githubusercontent.com/alwus/iepmafia-content/refs/heads/main/public/${player.image}`}
+                      alt={player.name}
+                      roundedCircle
+                      width={100}
+                      height={100}
+                      style={{ objectFit: 'cover' }} // Ensures the image fits well inside the circle
+                    />
+                    <p className="mt-2 text-center">{player.firstname}</p>
+                  </Col>
                 ))
               }
-            </ul>
+            </Row>
           </div>
         ))
       ) : (
