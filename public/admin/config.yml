@@ -6,16 +6,31 @@ media_folder: "public/uploads"      # Where images are stored
 public_folder: "/uploads"           # Public path for images
 
 collections:
+  - name: "sport"
+    label: "Sport"
+    folder: "content/sport"
+    create: true
+    fields:
+      - { name: "name", label: "Name" }
   - name: "games"
-    label: "Games"
+    label: "Game"
     folder: "content/games"
     create: true
     fields:
       - { name: "date", label: "Date", widget: "string" }
       - { name: "time", label: "Time", widget: "string" }
-      - { name: "sport", label: "Sport", widget: "string", default: "Soccer" }
+      - { name: "sport", label: "Sport", widget: "relation", collection: "sport", value_field: "name", search_fields: ["name"] }
       - { name: "team1", label: "Team 1", widget: "string" }
       - { name: "team2", label: "Team 2", widget: "string" }
       - { name: "score1", label: "Score 1", widget: "number", required: false}
       - { name: "score2", label: "Score 2", widget: "number", required: false}
       - { name: "final", label: "Final", widget: "boolean", default: false}
+  - name: "players"
+    label: "Player"
+    folder: "content/players"
+    create: true
+    fields:
+      - { name: "firstname", label: "First Name", widget: "string" }
+      - { name: "lastname", label: "Last Name", widget: "string" }
+      - { name: "sport", label: "Sport", widget: "relation", collection: "sport", value_field: "name", search_fields: ["name"] }
+      - { name: "image", label: "Image", widget: "image", allow_multiple: false, required: false }
